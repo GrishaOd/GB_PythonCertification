@@ -66,3 +66,28 @@ def edit_note():
             print("Note edited successfully!")
             return
     print("Note not found!")
+
+
+load_notes()
+
+while True:
+    print("1. Create note")
+    print("2. Read notes")
+    print("3. Edit note")
+    print("4. Delete note")
+    print("5. Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        create_note()
+    elif choice == "2":
+        read_note()
+    elif choice == "3":
+        edit_note()
+    elif choice == "4":
+        delete_note()
+    elif choice == "5":
+        break
+    else:
+        print("Invalid choice. Please try again.")
