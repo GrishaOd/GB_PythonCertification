@@ -44,3 +44,12 @@ def read_note():
         print("")
 
 
+def delete_note():
+    id = int(input("Enter note ID to delete: "))
+    for note in notes:
+        if note["id"] == id:
+            notes.remove(note)
+            save_notes()
+            print("Note deleted successfully!")
+            return
+    print("Note not found!")
