@@ -1,5 +1,6 @@
 import json
 import os
+import datetime
 
 notes = []
 
@@ -14,4 +15,23 @@ def load_notes():
 def save_notes():
     with open("notes.json", "w") as file:
         json.dump(notes, file, indent=4)
+
+
+def create_note():
+    id = len(notes) + 1
+    title = input("Enter note title: ")
+    body = input("Enter note body: ")
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    note = {
+        "id": id,
+        "title": title,
+        "body": body,
+        "timestamp": timestamp
+    }
+
+    notes.append(note)
+    save_notes()
+    print("Note created successfully!")
+
 
