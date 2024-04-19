@@ -53,3 +53,16 @@ def delete_note():
             print("Note deleted successfully!")
             return
     print("Note not found!")
+
+
+def edit_note():
+    id = int(input("Enter note ID to edit: "))
+    for note in notes:
+        if note["id"] == id:
+            note["title"] = input("Enter new title: ")
+            note["body"] = input("Enter new body: ")
+            note["timestamp"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            save_notes()
+            print("Note edited successfully!")
+            return
+    print("Note not found!")
