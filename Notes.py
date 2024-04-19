@@ -35,3 +35,12 @@ def create_note():
     print("Note created successfully!")
 
 
+def read_note():
+    for note in notes:
+        print(f"ID: {note['id']}")
+        print(f"Title: {note['title']}")
+        print(f"Body: {note['body']}")
+        print(f"Timestamp: {note['timestamp']}")
+        print("")
+
+
